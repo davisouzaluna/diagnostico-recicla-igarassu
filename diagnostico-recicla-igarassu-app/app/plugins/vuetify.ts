@@ -1,0 +1,53 @@
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import 'vuetify/styles'
+import { aliases, mdi } from 'vuetify/iconsets/mdi'
+
+const myCustomTheme = {
+  dark: false,
+  colors: {
+    background: '#FFFFFF',
+    surface: '#004D40',
+    primary: '#00695C',
+    'primary-darken-1': '#004D40',
+    secondary: '#FF6F00',
+    'secondary-darken-1': '#E65100',
+    error: '#B00020',
+    info: '#2196F3',
+    success: '#4CAF50',
+    warning: '#FB8C00',
+  },
+}
+
+export default defineNuxtPlugin((nuxtApp) => {
+  const vuetify = createVuetify({
+    icons: {
+      defaultSet: 'mdi',
+      aliases,
+      sets: {
+        mdi,
+      },
+    },
+    theme: {
+      defaultTheme: 'myCustomTheme',
+      themes: {
+        myCustomTheme,
+      },
+    },
+    defaults: {
+        VTextField: {
+            class: 'rounded-pill',
+            variant: 'outlined',
+        },
+        VSelect: {
+            class: 'rounded-pill',
+        },
+    },
+    components,
+    directives,
+    ssr: true,
+  })
+
+  nuxtApp.vueApp.use(vuetify)
+})

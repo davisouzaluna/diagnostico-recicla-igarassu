@@ -1,2 +1,16 @@
-@import "tailwindcss";
-@import "@nuxt/ui";
+@use "tailwindcss";
+@use "@nuxt/ui";
+
+
+
+$carousel-controls-color: #00695C !important;
+
+main {
+  margin: 8rem auto 0 auto;
+  width: 100vw;
+
+  @media (max-width: 576px) {
+    margin: 8rem auto 0 auto;
+    width: 90vw;
+}
+}

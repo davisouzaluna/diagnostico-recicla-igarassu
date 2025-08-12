@@ -2,12 +2,11 @@
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@nuxt/eslint', '@nuxt/ui', '@nuxtjs/pwa'],
+  modules: ['@nuxt/eslint', '@nuxt/ui', '@vite-pwa/nuxt'],
 
-
-  css: ['~/assets/main.scss'],
+  css: ['vuetify/styles', '~/assets/main.scss', '@mdi/font/css/materialdesignicons.css'],
+  build: {
+    transpile: ['vuetify'],
+  }, 
   ssr: false,
-  pwa: {
-    icon: false,
-  }
 })
