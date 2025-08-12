@@ -9,4 +9,14 @@ export default defineNuxtConfig({
     transpile: ['vuetify'],
   }, 
   ssr: false,
+   app: {
+    head: {
+      script: [
+        {
+          src: '/js/vlibras.js',
+          tagPosition: 'bodyClose',
+        }
+      ]
+    }
+  }
 })
