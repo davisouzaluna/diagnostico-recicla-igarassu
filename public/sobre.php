@@ -5,7 +5,7 @@
 <html lang="pt-br">
 <head>
   <meta charset="utf-8">
-  <title>Sobre o Projeto – Igarassu Recicla</title>
+  <title>Sobre o Projeto – RenovaLoop</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link href="/public/assets/styles.css" rel="stylesheet">
