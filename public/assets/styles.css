@@ -69,4 +69,42 @@ input.form-control {
   min-height: 100vh;
 }
 
+.footer-verde {
+  background-color: #1b5e20; /* verde escuro */
+  color: #ffffff;
+  padding: 2rem 0;
+}
+
+.footer-verde a {
+  color: #c8e6c9;
+  text-decoration: none;
+}
+
+.footer-verde a:hover {
+  text-decoration: underline;
+  color: #a5d6a7;
+}
+
+.footer-verde hr {
+  border-color: #66bb6a;
+}
+
+
+.icon-facebook {
+  color: #1877f2;
+}
+
+.icon-instagram {
+  color: #e1306c;
+}
+
+.icon-whatsapp {
+  color: #25d366;
+}
+
+.footer-verde a i {
+  font-size: 1.2rem;
+  margin-right: 6px;
+  vertical-align: middle;
+}
 
