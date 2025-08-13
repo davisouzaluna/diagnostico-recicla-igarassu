@@ -1,0 +1,72 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f5f9f6;
+}
+
+h3, h5 {
+  font-weight: 600;
+}
+
+.bg-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+}
+
+.carousel-item {
+  position: relative;
+  color: #fff;
+  text-shadow: 1px 1px 2px #000;
+}
+
+.btn-primary {
+  background-color: #2e7d32;
+  border-color: #2e7d32;
+}
+
+.btn-outline-primary {
+  border-color: #2e7d32;
+  color: #2e7d32;
+}
+
+.btn-outline-primary:hover {
+  background-color: #2e7d32;
+  color: #fff;
+}
+
+.card {
+  background-color: #ffffffee;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-body {
+  padding: 2rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
+}
+
+input.form-control {
+  border-radius: 8px;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 50%;
+}
+
+.badge-circle {
+  width: 44px; height: 44px; border: 3px solid #ccc;
+  border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #333; background: #fff;
+}
+
+.bg-recicla {
+  background: linear-gradient(135deg, #e6f4ea, #c8e6c9);
+  min-height: 100vh;
+}
+
+
