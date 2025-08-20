@@ -17,12 +17,18 @@
   </v-app>
 </template>
 <style lang="scss">
+html,body{
+   height: 100vh;
+  margin: 0;
+  overflow: hidden;
+}
 img{
   width:9.375rem;
   height:2.813rem;
 }
 main {
   width: 100vw;
+  overflow-y: auto;
 
   @media (max-width: 576px) {
     margin: 8rem auto 0 auto;

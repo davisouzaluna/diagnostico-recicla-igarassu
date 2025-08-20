@@ -23,6 +23,11 @@
   </div>
   </v-carousel-item>
 </v-carousel>
+<h1>holla manito</h1>
+<br/>
+<br/>
+<br/>
+<h1>só um teste</h1>
 </template>
 
 <script setup>

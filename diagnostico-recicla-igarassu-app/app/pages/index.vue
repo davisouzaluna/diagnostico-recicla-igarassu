@@ -1,5 +1,4 @@
 <template>
-    <h1>teste</h1>
     <home/>
 </template>
 <script setup lang="ts">
