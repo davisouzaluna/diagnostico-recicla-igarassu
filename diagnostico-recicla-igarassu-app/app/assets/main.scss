@@ -14,3 +14,11 @@ main {
     width: 90vw;
 }
 }
+form{
+  display: grid;
+	grid-template-rows: auto;
+	padding: 2em;
+}
+h1{
+  font-size: 1.8rem;
+}

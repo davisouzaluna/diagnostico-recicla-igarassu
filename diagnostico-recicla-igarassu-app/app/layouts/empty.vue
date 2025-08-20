@@ -3,6 +3,7 @@
   <v-app-bar
     scroll-behavior="elevate"
     color="background"
+    class="d-flex justify-space-between"
     >
     <v-container style="cursor: pointer;" @click="navigateTo('/')">
       <img 
