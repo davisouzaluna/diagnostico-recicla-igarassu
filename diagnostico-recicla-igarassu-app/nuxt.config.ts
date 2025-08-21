@@ -3,7 +3,11 @@ export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
   modules: ['@nuxt/eslint', '@nuxt/ui', '@vite-pwa/nuxt', '@nuxtjs/leaflet'],
-
+     vite: {
+        server: {
+            allowedHosts: true,
+        },
+    },
   css: ['vuetify/styles', '~/assets/main.scss', '@mdi/font/css/materialdesignicons.css'],
   build: {
     transpile: ['vuetify'],
@@ -11,12 +15,12 @@ export default defineNuxtConfig({
   ssr: false,
    app: {
     head: {
-      script: [
+      script: [
         {
           src: '/js/vlibras.js',
           tagPosition: 'bodyClose',
         }
-      ]
-    }
-  }
+      ]
+     }
+    }
 })

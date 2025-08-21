@@ -1,26 +1,16 @@
 <template>
-    <h1>ola</h1>
-  <div style="height:100vh; width:100vw">
-    <LMap
-      ref="map"
-      :zoom="zoom"
-      :center="[-7.83437, -34.9064]"
-      :use-global-leaflet="false"
+  <v-container class="d-flex flex-row justify-end">
+    <v-btn 
+    color="primary"
+    prepend-icon="mdi-map-marker"
+    @click="navigateTo('/location/create')"
     >
-      <LTileLayer
-        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        attribution="&amp;copy; <a href=&quot;https://www.openstreetmap.org/&quot;>OpenStreetMap</a> contributors"
-        layer-type="base"
-        name="OpenStreetMap"
-      />
-    </LMap>
-  </div>
+    Registrar disponibilidade
+    </v-btn>
+  </v-container>
+  <Map/>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
-const zoom = ref(15)
-</script>
 
-<style scoped lang='scss'>
-</style>
+</script>
