@@ -1,5 +1,5 @@
 <template>
-  <div style="height:100vh; width:100vw">
+  <div style="height:80vh; width:100vw">
     <LMap
       ref="map"
       use-global-leaflet

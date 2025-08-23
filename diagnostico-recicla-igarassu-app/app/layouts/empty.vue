@@ -2,7 +2,7 @@
   <v-app>
   <v-app-bar
     scroll-behavior="elevate"
-    color="background"
+    color="secondary"
     class="d-flex justify-space-between"
     >
     <v-container style="cursor: pointer;" @click="navigateTo('/')">
@@ -11,16 +11,18 @@
           alt="Logo do diagnóstico recicla Igarassu"
           >
     </v-container>
-    <authComponent/>
+    <v-container>
+      <authComponent/>
+    </v-container>
   </v-app-bar>
   <slot />
+  <LayoutAppFooter/>
   </v-app>
 </template>
 <style lang="scss">
 html,body{
    height: 100vh;
   margin: 0;
-  overflow: hidden;
 }
 img{
   width:9.375rem;

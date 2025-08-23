@@ -3,6 +3,7 @@ import * as components from 'vuetify/components'
 import * as directives from 'vuetify/directives'
 import 'vuetify/styles'
 import { aliases, mdi } from 'vuetify/iconsets/mdi'
+import { VMaskInput } from 'vuetify/labs/VMaskInput'
 
 const myCustomTheme = {
   dark: false,
@@ -11,7 +12,7 @@ const myCustomTheme = {
     surface: '#F1F8F6',
     primary: '#00695C',
     'primary-darken-1': '#004D40',
-    secondary: '#FF6F00',
+    secondary: '#FFFFFFF',
     'secondary-darken-1': '#E65100',
     error: '#B00020',
     info: '#2196F3',
@@ -44,7 +45,10 @@ export default defineNuxtPlugin((nuxtApp) => {
             class: 'rounded-pill',
         },
     },
-    components,
+    components: {
+      ...components,
+       VMaskInput
+    },
     directives,
     ssr: true,
   })

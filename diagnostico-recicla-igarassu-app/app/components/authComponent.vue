@@ -1,6 +1,6 @@
 <template>
   <!-- botões "ativadores" -->
-  <v-row class="ga-0 d-flex flex-nowrap mr-8">
+  <v-row class="ga-0 d-flex flex-nowrap justify-end">
       <v-col cols="auto" >
       <v-btn variant="flat"  color="primary" @click="register = true">Cadastre-se</v-btn>
       </v-col>
@@ -14,7 +14,7 @@
     v-model="login"
      persistent="false"
     >
-      <v-card color="background" class="w-33 ma-auto d-{w-75}">
+      <v-card color="secondary" class="w-33 ma-auto d-{w-75}">
         <v-btn
 				icon="mdi-close"
 				class="ml-auto"
@@ -46,7 +46,7 @@
 					@click:append-inner="visible = !visible"
           required
           ></v-text-field>
-         <v-btn>Fazer login</v-btn>
+         <v-btn color="primary">Fazer login</v-btn>
          <v-container>
 					<NuxtLink 
           @click="() => {
@@ -66,7 +66,7 @@
 		v-model="register"
 		max-width="600px"
 	>
-		<v-card class="pa-1" color="background">
+		<v-card class="pa-1" color="secondary">
 			<v-btn
 				icon="mdi-close"
 				class="ml-auto"
@@ -132,7 +132,8 @@
 				<!-- Botões de navegação -->
 				<div class="d-flex justify-space-between mt-2">
 					<v-btn
-						text
+						color="primary"
+						variant="outlined"
 						v-show="step > 0"
 						@click="step--"
 						prepend-icon="mdi-arrow-left"

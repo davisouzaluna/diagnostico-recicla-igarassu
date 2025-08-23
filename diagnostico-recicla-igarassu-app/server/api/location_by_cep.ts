@@ -1,4 +1,4 @@
-import axiosServer from "~/server/services/axiosServer"
+import axiosServer from "../services/axiosServer";
 
 export default defineEventHandler(async (event) => {
     const {search} = getQuery(event);
