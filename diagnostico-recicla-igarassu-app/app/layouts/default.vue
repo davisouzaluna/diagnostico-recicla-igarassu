@@ -18,6 +18,38 @@
 					alt="Logo do diagnóstico recicla Igarassu"
 				/>
 			</v-container>
+			<!-- Container do usuário -->
+		<v-container class="text-center mr-8 d-flex justify-end">
+			<v-menu
+				:location="location"
+				v-model="isOpen"
+				class="ml-auto mr-0"
+			>
+				<template v-slot:activator="{ props }">
+					<v-btn
+						color="surface"
+						variant="outlined"
+						prepend-icon="mdi-account"
+						:append-icon="!isOpen ? 'mdi-chevron-down' : 'mdi-chevron-up'"
+						v-bind="props"
+					>
+						{{ $userStore.user.name }}
+					</v-btn>
+				</template>
+
+				<v-list>
+					<v-list-item
+						v-for="(item, index) in items"
+						:key="index"
+						:value="index"
+						:append-icon="item.icon"
+						@click="item.action"
+					>
+						<v-list-item-title class="ma-0 pa-0">{{ item.title }}</v-list-item-title>
+					</v-list-item>
+				</v-list>
+			</v-menu>
+		</v-container>
 		</v-app-bar>
 		<v-navigation-drawer
 			color="primary"
@@ -25,7 +57,7 @@
 			:location="$vuetify.display.mobile ? 'bottom' : undefined"
 			temporary
 		>
-			<v-list :items="items"></v-list>
+			<v-list :items="itemsMenu"></v-list>
 		</v-navigation-drawer>
 		<main>
 			<section>
@@ -33,16 +65,23 @@
 			</section>
 		</main>
 		<LayoutAppFooter
-			:isOpen="open"
 			color="primary"
 		/>
 	</v-app>
 </template>
 
 <script setup lang="ts">
-const drawer = ref(false);
+import authService from '~/services/authService';
 
-const items = [
+const { $userStore } = useNuxtApp();
+const drawer = ref(false);
+const isOpen = ref(false);
+
+const location = ref('bottom center');
+
+
+const items = [{ title: 'Sair da conta', icon: 'mdi-logout', action: logout }];
+const itemsMenu = [
 	{
 		title: 'Página inicial',
 		value: 'foo',
@@ -53,9 +92,19 @@ const items = [
 	},
 	{
 		title: 'Sobre Nós',
-		value: 'bar',
+		value: 'bars',
 	},
 ];
+
+async function logout(){
+	try{
+		await authService.logout()
+		navigateTo("/")
+	}
+	catch(e){
+		console.log(e)
+	}
+}
 
 const group = ref(null);
 

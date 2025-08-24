@@ -3,10 +3,12 @@
 		<v-card color="surface">
 			<v-container class="pa-8">
 				<h1 class="ml-auto mr-auto">Registrar disponibilidade de material</h1>
-				<Map
-					class="ma-auto"
-					style="height: 50vh; width: auto"
-				/>
+				<Keep-alive>
+					<Map
+						class="ma-auto"
+						style="height: 50vh; width: auto"
+					/>
+				</Keep-alive>
 			</v-container>
 			<v-form>
 				<v-label for=""></v-label>
@@ -85,6 +87,11 @@
 
 <script setup lang="ts">
 import cepDataService from '~/services/cepDataService';
+
+definePageMeta({
+	keepalive: true, 
+	key: "createLocation"
+})
 
 const selectedSize = ref('Selecione a quantidade');
 const isDisable = ref(true);

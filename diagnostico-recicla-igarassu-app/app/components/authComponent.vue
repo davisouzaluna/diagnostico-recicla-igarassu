@@ -101,7 +101,7 @@
 				alt="Ícone do diagnóstico recicla Igarassu"
 				style="width: 8rem; height: 8rem"
 			/>
-			<v-form>
+			<v-form @submit.prevent="submitRegister()">
 				<h1 class="ml-auto mr-auto">Cadastro</h1>
 				<v-window v-model="step">
 					<!-- Etapa 1 -->
@@ -110,7 +110,7 @@
 						<v-text-field
 							id="name"
 							variant="outlined"
-							v-model="register.name"
+							v-model="register_data.name"
 							placeholder="Digite seu nome"
 						/>
 
@@ -119,7 +119,7 @@
 							id="email"
 							variant="outlined"
 							type="email"
-							v-model="register.email"
+							v-model="register_data.email"
 							placeholder="Digite seu e-mail"
 						/>
 					</v-window-item>
@@ -130,7 +130,7 @@
 						<v-text-field
 							id="password"
 							variant="outlined"
-							v-model="register.password"
+							v-model="register_data.password"
 							placeholder="Digite sua senha"
 							:append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
 							:type="visible ? 'text' : 'password'"
@@ -141,7 +141,7 @@
 						<v-text-field
 							id="confirmPassword"
 							variant="outlined"
-							v-model="register.confirmPassword"
+							v-model="register_data.confirmPassword"
 							placeholder="Confirme sua senha"
 							:append-inner-icon="visibleConfirm ? 'mdi-eye-off' : 'mdi-eye'"
 							:type="visibleConfirm ? 'text' : 'password'"
@@ -204,6 +204,7 @@ import authService from '~/services/authService';
 const login = ref(false);
 const register = ref(false);
 const visible = ref(false);
+const visibleConfirm = ref(false);
 const step = ref(0);
 
 const login_data = ref({
@@ -211,12 +212,29 @@ const login_data = ref({
 	password: '',
 });
 
+const register_data = ref({
+	email: "",
+	name: "",
+	password: "",
+	confirmPassword: ""
+})
+
+async function submitRegister(){
+	try{
+		await authService.register(register_data.value.name, register_data.value.email, register_data.value.password)
+		navigateTo('/dashboard')
+	}
+	catch(e){
+		console.log(e)
+	}
+}
+
 async function submitLogin() {
 	try {
 		await authService.login(login_data.value.email, login_data.value.password);
 		navigateTo('/dashboard');
 	} catch (e) {
-		alert(e.msg);
+		alert(e!.msg);
 		console.log(e);
 	}
 }

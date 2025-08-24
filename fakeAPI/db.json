@@ -1,11 +1,29 @@
 {
-    "users":[
-        {
-            "id": 1,
-            "name": "Severina",
-            "email": "severinadapernafina@gmail.com",
-            "password": "123456789"
-        }
-    ],
-    "locations":[]
+  "users": [
+    {
+      "id": 1,
+      "name": "Severina",
+      "email": "severinadapernafina@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "1d43",
+      "name": "Francisco Cisco",
+      "email": "fran_cisco@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "d11f",
+      "name": "Guilherme",
+      "email": "valenca@gmail.com",
+      "password": "123456789"
+    },
+    {
+      "id": "a021",
+      "name": "claudiane",
+      "email": "cra@discente.com",
+      "password": "123456789"
+    }
+  ],
+  "locations": []
 }

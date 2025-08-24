@@ -2,7 +2,10 @@
 export default defineNuxtConfig({
 	compatibilityDate: '2025-07-15',
 	devtools: { enabled: false },
-	modules: ['@nuxt/eslint', '@nuxt/ui', '@vite-pwa/nuxt', '@nuxtjs/leaflet'],
+	modules: ['@nuxt/eslint', '@vite-pwa/nuxt', '@nuxtjs/leaflet', '@pinia/nuxt'],
+	pinia: {
+		storesDirs: ['~/stores/**'],
+	},
 	vite: {
 		server: {
 			allowedHosts: true,
