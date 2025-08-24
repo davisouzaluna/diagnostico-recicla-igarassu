@@ -1,16 +1,16 @@
-import axiosServer from "../services/axiosServer";
+import axiosServer from '../services/axiosServer';
 
 export default defineEventHandler(async (event) => {
-    const { search } = getQuery(event);
-    const { apiCoordinates } = axiosServer();
+	const { search } = getQuery(event);
+	const { apiCoordinates } = axiosServer();
 
-    const { data } = await apiCoordinates.get('', {
-        params: {
-            q: search,
-        },
-    });
+	const { data } = await apiCoordinates.get('', {
+		params: {
+			q: search,
+		},
+	});
 
-    return {
-        data,
-    }
+	return {
+		data,
+	};
 });

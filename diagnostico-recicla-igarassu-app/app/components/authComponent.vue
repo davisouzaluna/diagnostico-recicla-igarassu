@@ -1,72 +1,93 @@
 <template>
-  <!-- botões "ativadores" -->
-  <v-row class="ga-0 d-flex flex-nowrap justify-end">
-      <v-col cols="auto" >
-      <v-btn variant="flat"  color="primary" @click="register = true">Cadastre-se</v-btn>
-      </v-col>
-      <v-col cols="auto">
-      <v-btn variant="flat" color="primary" @click="login = true">Login</v-btn>
-    </v-col>
-    </v-row>
+	<!-- botões "ativadores" -->
+	<v-row class="ga-0 d-flex flex-nowrap justify-end">
+		<v-col cols="auto">
+			<v-btn
+				variant="flat"
+				color="primary"
+				@click="register = true"
+				>Cadastre-se</v-btn
+			>
+		</v-col>
+		<v-col cols="auto">
+			<v-btn
+				variant="flat"
+				color="primary"
+				@click="login = true"
+				>Login</v-btn
+			>
+		</v-col>
+	</v-row>
 
-    <!-- modal de login -->
-    <v-dialog 
-    v-model="login"
-     persistent="false"
-    >
-      <v-card color="secondary" class="w-33 ma-auto d-{w-75}">
-        <v-btn
+	<!-- modal de login -->
+	<v-dialog v-model="login">
+		<v-card
+			color="secondary"
+			class="w-33 ma-auto d-{w-75}"
+		>
+			<v-btn
 				icon="mdi-close"
 				class="ml-auto"
 				variant="text"
 				@click="login = false"
 			>
 			</v-btn>
-        <img
-        class="ma-auto"
-        src="~/assets/images/logo-diagnostico-recicla-igarassu.svg"
-        alt="Ícone do diagnóstico recicla Igarassu"
-        style="width:8rem;height:8rem"
-        >
-        <v-form>
-        <h1 class="ml-auto mr-auto">Login</h1>
-        <v-label  for="email">Email:</v-label>
-        <v-text-field
-         id="email"
-         placeholder="Digite seu email"
-         required
-         ></v-text-field>
+			<img
+				class="ma-auto"
+				src="~/assets/images/logo-diagnostico-recicla-igarassu.svg"
+				alt="Ícone do diagnóstico recicla Igarassu"
+				style="width: 8rem; height: 8rem"
+			/>
+			<v-form @submit.prevent="submitLogin()">
+				<h1 class="ml-auto mr-auto">Login</h1>
+				<v-label for="email">Email:</v-label>
+				<v-text-field
+					id="email"
+					placeholder="Digite seu email"
+					v-model="login_data.email"
+					required
+				></v-text-field>
 
-        <v-label for="password">Senha:</v-label>
-        <v-text-field 
-          id="password"
-          placeholder="Digite sua senha"
-          :append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
-				  :type="visible ? 'text' : 'password'"
+				<v-label for="password">Senha:</v-label>
+				<v-text-field
+					id="password"
+					placeholder="Digite sua senha"
+					:append-inner-icon="visible ? 'mdi-eye-off' : 'mdi-eye'"
+					:type="visible ? 'text' : 'password'"
 					@click:append-inner="visible = !visible"
-          required
-          ></v-text-field>
-         <v-btn color="primary">Fazer login</v-btn>
-         <v-container>
-					<NuxtLink 
-          @click="() => {
+					v-model="login_data.password"
+					required
+				></v-text-field>
+				<v-btn
+					type="submit"
+					color="primary"
+					>Fazer login</v-btn
+				>
+				<v-container>
+					<NuxtLink
+						@click="
+							() => {
 								register = true;
 								login = false;
-							}"
-          style="cursor: pointer;text-decoration: underline"
-              >Ainda não tem conta? Cadastre-se</NuxtLink>
-				  </v-container>
-      </v-form>
-      </v-card>
-    </v-dialog>
+							}
+						"
+						style="cursor: pointer; text-decoration: underline"
+						>Ainda não tem conta? Cadastre-se</NuxtLink
+					>
+				</v-container>
+			</v-form>
+		</v-card>
+	</v-dialog>
 
-
-    <!-- modal de cadastro -->
+	<!-- modal de cadastro -->
 	<v-dialog
 		v-model="register"
 		max-width="600px"
 	>
-		<v-card class="pa-1" color="secondary">
+		<v-card
+			class="pa-1"
+			color="secondary"
+		>
 			<v-btn
 				icon="mdi-close"
 				class="ml-auto"
@@ -74,12 +95,12 @@
 				@click="register = false"
 			>
 			</v-btn>
-      <img
-        class="ma-auto"
-        src="~/assets/images/logo-diagnostico-recicla-igarassu.svg"
-        alt="Ícone do diagnóstico recicla Igarassu"
-        style="width:8rem;height:8rem"
-        >
+			<img
+				class="ma-auto"
+				src="~/assets/images/logo-diagnostico-recicla-igarassu.svg"
+				alt="Ícone do diagnóstico recicla Igarassu"
+				style="width: 8rem; height: 8rem"
+			/>
 			<v-form>
 				<h1 class="ml-auto mr-auto">Cadastro</h1>
 				<v-window v-model="step">
@@ -178,15 +199,32 @@
 </template>
 
 <script lang="ts" setup>
-  const login = ref(false);
-  const register = ref(false);
-  const visible=ref(false);
-  const step = ref(0);
+import authService from '~/services/authService';
+
+const login = ref(false);
+const register = ref(false);
+const visible = ref(false);
+const step = ref(0);
+
+const login_data = ref({
+	email: '',
+	password: '',
+});
+
+async function submitLogin() {
+	try {
+		await authService.login(login_data.value.email, login_data.value.password);
+		navigateTo('/dashboard');
+	} catch (e) {
+		alert(e.msg);
+		console.log(e);
+	}
+}
 </script>
 
 <style scoped lang="scss">
-img{
-  width: 134px;
-  height: 235px;
+img {
+	width: 134px;
+	height: 235px;
 }
 </style>

@@ -1,10 +1,9 @@
 <template>
-    <home/>
+	<home />
 </template>
 <script setup lang="ts">
 definePageMeta({
-  layout: 'empty',
-})
+	layout: 'empty',
+});
 </script>
-<style scoped lang="scss">
-</style>
+<style scoped lang="scss"></style>

@@ -1,0 +1,11 @@
+{
+    "users":[
+        {
+            "id": 1,
+            "name": "Severina",
+            "email": "severinadapernafina@gmail.com",
+            "password": "123456789"
+        }
+    ],
+    "locations":[]
+}

@@ -1,25 +1,23 @@
-@use "tailwindcss";
-@use "@nuxt/ui";
+@use 'tailwindcss';
+@use '@nuxt/ui';
 
-
-
-$carousel-controls-color: #00695C !important;
+$carousel-controls-color: #00695c !important;
 
 main {
-  margin: 8rem auto 0 auto;
-  width: 100vw;
-  overflow-y: auto;
+	margin: 8rem auto 0 auto;
+	width: 100vw;
+	overflow-y: auto;
 
-  @media (max-width: 576px) {
-    margin: 8rem auto 0 auto;
-    width: 90vw;
+	@media (max-width: 576px) {
+		margin: 8rem auto 0 auto;
+		width: 90vw;
+	}
 }
-}
-form{
-  display: grid;
+form {
+	display: grid;
 	grid-template-rows: auto;
 	padding: 2em;
 }
-h1{
-  font-size: 1.8rem;
+h1 {
+	font-size: 1.8rem;
 }

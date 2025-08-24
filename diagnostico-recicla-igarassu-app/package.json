@@ -7,7 +7,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "format": "prettier --write app/ server/ nuxt.config.ts"
   },
   "dependencies": {
     "@nuxt/eslint": "^1.7.1",
@@ -17,6 +18,7 @@
     "axios": "^1.11.0",
     "eslint": "^9.32.0",
     "nuxt": "^4.0.1",
+    "prettier": "^3.6.2",
     "typescript": "^5.8.3",
     "vue": "^3.5.18",
     "vue-router": "^4.5.1"
