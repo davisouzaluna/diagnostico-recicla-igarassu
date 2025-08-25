@@ -17,6 +17,7 @@
     "@vite-pwa/nuxt": "^1.0.4",
     "axios": "^1.11.0",
     "eslint": "^9.32.0",
+    "leaflet.heat": "^0.2.0",
     "nuxt": "^4.0.1",
     "pinia": "^3.0.3",
     "prettier": "^3.6.2",

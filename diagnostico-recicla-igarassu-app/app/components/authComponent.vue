@@ -5,7 +5,7 @@
 			<v-btn
 				variant="flat"
 				color="primary"
-				@click="register = true"
+				@click="dialogState = true"
 				>Cadastre-se</v-btn
 			>
 		</v-col>
@@ -67,7 +67,7 @@
 					<NuxtLink
 						@click="
 							() => {
-								register = true;
+								dialogState = true;
 								login = false;
 							}
 						"
@@ -81,7 +81,7 @@
 
 	<!-- modal de cadastro -->
 	<v-dialog
-		v-model="register"
+		v-model="dialogState"
 		max-width="600px"
 	>
 		<v-card
@@ -92,7 +92,7 @@
 				icon="mdi-close"
 				class="ml-auto"
 				variant="text"
-				@click="register = false"
+				@click="dialogState = false"
 			>
 			</v-btn>
 			<img
@@ -186,7 +186,7 @@
 						style="cursor: pointer; text-decoration: underline"
 						@click="
 							() => {
-								register = false;
+								dialogState = false;
 								login = true;
 							}
 						"
@@ -200,6 +200,7 @@
 
 <script lang="ts" setup>
 import authService from '~/services/authService';
+import { dialogState } from '@/composables/useDialog.js'
 
 const login = ref(false);
 const register = ref(false);
