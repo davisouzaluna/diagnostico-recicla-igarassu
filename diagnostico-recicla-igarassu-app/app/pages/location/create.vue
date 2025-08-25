@@ -1,4 +1,12 @@
 <template>
+	<v-btn 
+    prepend-icon="mdi-arrow-left"
+    variant="text" 
+    color="primary"
+    @click="navigateTo('/dashboard')"
+    >
+    Voltar
+    </v-btn>
 	<v-container>
 		<v-card color="surface">
 			<v-container class="pa-8">

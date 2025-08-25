@@ -35,6 +35,24 @@
       "name": "gui",
       "email": "gui1@gmail.com",
       "password": "rock1109"
+    },
+    {
+      "id": "8adc",
+      "name": "claudiane",
+      "email": "cra@discente",
+      "password": "123456789"
+    },
+    {
+      "id": "646a",
+      "name": "claudiane",
+      "email": "cra@discente",
+      "password": "123456789"
+    },
+    {
+      "id": "10d1",
+      "name": "claudiane",
+      "email": "cra@discente",
+      "password": "123456789"
     }
   ],
   "locations": [
@@ -162,6 +180,215 @@
         "contato": "81777766632",
         "numero": "565",
         "bairro": "Sítio dos Marcos",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "b62a",
+      "lat": "-7.856481",
+      "lng": "-34.8963808",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Metal"
+      },
+      "cep_info": {
+        "cep": "53625579",
+        "rua": "Rua dos Abacateiros",
+        "contato": "81777766632",
+        "numero": "565",
+        "bairro": "Umbura",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "ba2b",
+      "lat": "-7.9045369",
+      "lng": "-34.9217471",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53620300",
+        "rua": "Rua dos Lírios",
+        "contato": "",
+        "numero": "855",
+        "bairro": "Encanto Igarassu",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "7213",
+      "lat": "-7.8622872",
+      "lng": "-34.9062203",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Papelão"
+      },
+      "cep_info": {
+        "cep": "53625390",
+        "rua": "Rua da Assembléia",
+        "contato": "81556854564",
+        "numero": "13",
+        "bairro": "Jardim Boa Sorte",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "e4c3",
+      "lat": "-7.8639101",
+      "lng": "-34.9051036",
+      "material_info": {
+        "size": "Selecione a quantidade",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625320",
+        "rua": "Rua Adélia Rodrigues",
+        "contato": "81888888888",
+        "numero": "23",
+        "bairro": "Jardim Boa Sorte",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "19bf",
+      "lat": "-7.864462",
+      "lng": "-34.9060757",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625355",
+        "rua": "Rua Vinte e Seis de Julho",
+        "contato": "81656565656",
+        "numero": "10",
+        "bairro": "Jardim Boa Sorte",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "9952",
+      "lat": "-7.8713621",
+      "lng": "-34.9003811",
+      "material_info": {
+        "size": "Caixa",
+        "type": "Papelão"
+      },
+      "cep_info": {
+        "cep": "53630735",
+        "rua": "Rua João Ricardo da Silva",
+        "contato": "81235656565",
+        "numero": "50",
+        "bairro": "Pancó",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "369a",
+      "lat": "-7.8654158",
+      "lng": "-34.904026",
+      "material_info": {
+        "size": "Caixa",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625110",
+        "rua": "Rua São Francisco de Assis",
+        "contato": "81777897998",
+        "numero": "111",
+        "bairro": "Cruz do Rebouças",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "d345",
+      "lat": "-7.8658657",
+      "lng": "-34.9042405",
+      "material_info": {
+        "size": "Caixa",
+        "type": "Metal"
+      },
+      "cep_info": {
+        "cep": "53625100",
+        "rua": "Rua Santa Mônica",
+        "contato": "81888878878",
+        "numero": "111",
+        "bairro": "Cruz do Rebouças",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "e711",
+      "lat": "-7.866196",
+      "lng": "-34.9048767",
+      "material_info": {
+        "size": "Caixa",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625105",
+        "rua": "Rua Santa Helena",
+        "contato": "81111111111",
+        "numero": "28",
+        "bairro": "Cruz do Rebouças",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "6234",
+      "lat": "-7.8657955",
+      "lng": "-34.9053977",
+      "material_info": {
+        "size": "Caixa",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625400",
+        "rua": "Rua Maria das Dores",
+        "contato": "81565656556",
+        "numero": "22",
+        "bairro": "Jardim Boa Sorte",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "8ada",
+      "lat": "-7.8657955",
+      "lng": "-34.9053977",
+      "material_info": {
+        "size": "Caixa",
+        "type": "Papelão"
+      },
+      "cep_info": {
+        "cep": "53625200",
+        "rua": "Rua Maria das Dores",
+        "contato": "81454652222",
+        "numero": "88",
+        "bairro": "Cruz do Rebouças",
         "cidade": "Igarassu",
         "estado": "PE",
         "referencia": ""

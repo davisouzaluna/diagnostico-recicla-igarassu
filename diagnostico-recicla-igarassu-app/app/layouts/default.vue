@@ -57,7 +57,29 @@
 			:location="$vuetify.display.mobile ? 'bottom' : undefined"
 			temporary
 		>
-			<v-list :items="itemsMenu"></v-list>
+				<v-list class="menu-height bg-primary">
+					<v-list-item
+						prepend-icon="mdi-home"
+						title="Home"
+						@click="navigateTo('/dashboard')"
+						class="bg-primary"
+					>
+					</v-list-item>
+					<v-list-item
+						prepend-icon="mdi-chart-arc"
+						title="Diagnóstico"
+						@click="navigateTo('/diagnostic')"
+						class="bg-primary"
+					>
+					</v-list-item>
+					<v-list-item
+						prepend-icon="mdi-information-outline"
+						title="Sobre Nós"
+						@click="navigateTo('/about')"
+						class="bg-primary"
+					>
+					</v-list-item>
+				</v-list>
 		</v-navigation-drawer>
 		<main>
 			<section>
@@ -89,6 +111,10 @@ const itemsMenu = [
 	{
 		title: 'Perfil',
 		value: 'bar',
+	},
+	{
+		title: 'Diagnóstico',
+		value: 'bars',
 	},
 	{
 		title: 'Sobre Nós',
