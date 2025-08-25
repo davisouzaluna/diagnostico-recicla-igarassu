@@ -9,15 +9,29 @@
 				Registrar disponibilidade
 			</v-btn>
 		</v-container>
-		<keep-alive>
-			<Map />
-		</keep-alive>
+			<Map :locations="locations" />
 	</section>
 </template>
 
 <script setup lang="ts">
-definePageMeta({
-	keepalive: true, 
-	key: "dashboard"
-})
+import locationsService from '~/services/locationsService';
+import type { LocationType } from '~/types/location';
+
+const locations = ref<LocationType[]>([]);
+
+async function getLocations(){
+	try{
+		const data = await locationsService.getLocations();
+		locations.value.push(...data)
+	}
+	catch(e){
+		alert(e.msg)
+	}
+}
+onMounted(()=>
+	getLocations()
+)
+onActivated(()=>
+	getLocations()
+)
 </script>

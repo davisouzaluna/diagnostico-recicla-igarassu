@@ -1,7 +1,7 @@
 {
   "users": [
     {
-      "id": 1,
+      "id": "1",
       "name": "Severina",
       "email": "severinadapernafina@gmail.com",
       "password": "123456789"
@@ -23,7 +23,149 @@
       "name": "claudiane",
       "email": "cra@discente.com",
       "password": "123456789"
+    },
+    {
+      "id": "6182",
+      "name": "Guilherme",
+      "email": "gui@gmail.com",
+      "password": "rock1109"
+    },
+    {
+      "id": "806f",
+      "name": "gui",
+      "email": "gui1@gmail.com",
+      "password": "rock1109"
     }
   ],
-  "locations": []
+  "locations": [
+    {
+      "id": "7543",
+      "lat": "-7.8632973",
+      "lng": "-34.9047357",
+      "material_info": {
+        "size": "Saco pequeno",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625375",
+        "rua": "Rua Maria Luiza da Silva",
+        "numero": "169",
+        "bairro": "Jardim Boa Sorte",
+        "cidade": "Igarassu",
+        "estado": "PE"
+      }
+    },
+    {
+      "id": "d72e",
+      "lat": "-7.8632973",
+      "lng": "-34.9047357",
+      "material_info": {
+        "size": "Saco pequeno",
+        "type": "Plástico"
+      },
+      "cep_info": {
+        "cep": "53625375",
+        "rua": "Rua Maria Luiza da Silva",
+        "numero": "169",
+        "bairro": "Jardim Boa Sorte",
+        "cidade": "Igarassu",
+        "estado": "PE"
+      }
+    },
+    {
+      "id": "e74e",
+      "lat": "-7.8388152",
+      "lng": "-34.909426",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Papelão"
+      },
+      "cep_info": {
+        "cep": "53620550",
+        "rua": "Rua João Tertuliano de Carvalho",
+        "contato": "23356565465",
+        "numero": "",
+        "bairro": "Saramandaia",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "cd99",
+      "lat": "-7.8752833",
+      "lng": "-34.902177",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Papelão"
+      },
+      "cep_info": {
+        "cep": "53625813",
+        "rua": "Rua Frei Miguelinho",
+        "contato": "23356565465",
+        "numero": "",
+        "bairro": "Inhamã",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "f781",
+      "lat": "-7.8859314",
+      "lng": "-34.9126353",
+      "material_info": {
+        "size": "Saco grande",
+        "type": "Metal"
+      },
+      "cep_info": {
+        "cep": "53560780",
+        "rua": "Rua Irajá",
+        "contato": "",
+        "numero": "169",
+        "bairro": "Jardim Caetés",
+        "cidade": "Abreu e Lima",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "4037",
+      "lat": "-7.8859314",
+      "lng": "-34.9126353",
+      "material_info": {
+        "size": "Saco pequeno",
+        "type": "Papelão"
+      },
+      "cep_info": {
+        "cep": "53560780",
+        "rua": "Rua Irajá",
+        "contato": "23356565465",
+        "numero": "111",
+        "bairro": "Jardim Caetés",
+        "cidade": "Abreu e Lima",
+        "estado": "PE",
+        "referencia": ""
+      }
+    },
+    {
+      "id": "ecd2",
+      "lat": "-7.9164248",
+      "lng": "-34.8970224",
+      "material_info": {
+        "size": "Saco pequeno",
+        "type": "Metal"
+      },
+      "cep_info": {
+        "cep": "53615430",
+        "rua": "Rua Marginal",
+        "contato": "81777766632",
+        "numero": "565",
+        "bairro": "Sítio dos Marcos",
+        "cidade": "Igarassu",
+        "estado": "PE",
+        "referencia": ""
+      }
+    }
+  ]
 }
