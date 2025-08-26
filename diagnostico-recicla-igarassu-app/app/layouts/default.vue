@@ -19,37 +19,39 @@
 				/>
 			</v-container>
 			<!-- Container do usuário -->
-		<v-container class="text-center mr-8 d-flex justify-end">
-			<v-menu
-				:location="location"
-				v-model="isOpen"
-				class="ml-auto mr-0"
-			>
-				<template v-slot:activator="{ props }">
-					<v-btn
-						color="surface"
-						variant="outlined"
-						prepend-icon="mdi-account"
-						:append-icon="!isOpen ? 'mdi-chevron-down' : 'mdi-chevron-up'"
-						v-bind="props"
-					>
-						{{ $userStore.user.name }}
-					</v-btn>
-				</template>
+			<v-container class="text-center mr-8 d-flex justify-end">
+				<v-menu
+					:location="location"
+					v-model="isOpen"
+					class="ml-auto mr-0"
+				>
+					<template v-slot:activator="{ props }">
+						<v-btn
+							color="surface"
+							variant="outlined"
+							prepend-icon="mdi-account"
+							:append-icon="!isOpen ? 'mdi-chevron-down' : 'mdi-chevron-up'"
+							v-bind="props"
+						>
+							{{ $userStore.user.name }}
+						</v-btn>
+					</template>
 
-				<v-list>
-					<v-list-item
-						v-for="(item, index) in items"
-						:key="index"
-						:value="index"
-						:append-icon="item.icon"
-						@click="item.action"
-					>
-						<v-list-item-title class="ma-0 pa-0">{{ item.title }}</v-list-item-title>
-					</v-list-item>
-				</v-list>
-			</v-menu>
-		</v-container>
+					<v-list>
+						<v-list-item
+							v-for="(item, index) in items"
+							:key="index"
+							:value="index"
+							:append-icon="item.icon"
+							@click="item.action"
+						>
+							<v-list-item-title class="ma-0 pa-0">{{
+								item.title
+							}}</v-list-item-title>
+						</v-list-item>
+					</v-list>
+				</v-menu>
+			</v-container>
 		</v-app-bar>
 		<v-navigation-drawer
 			color="primary"
@@ -57,38 +59,36 @@
 			:location="$vuetify.display.mobile ? 'bottom' : undefined"
 			temporary
 		>
-				<v-list class="menu-height bg-primary">
-					<v-list-item
-						prepend-icon="mdi-home"
-						title="Home"
-						@click="navigateTo('/dashboard')"
-						class="bg-primary"
-					>
-					</v-list-item>
-					<v-list-item
-						prepend-icon="mdi-chart-arc"
-						title="Diagnóstico"
-						@click="navigateTo('/diagnostic')"
-						class="bg-primary"
-					>
-					</v-list-item>
-					<v-list-item
-						prepend-icon="mdi-information-outline"
-						title="Sobre Nós"
-						@click="navigateTo('/about')"
-						class="bg-primary"
-					>
-					</v-list-item>
-				</v-list>
+			<v-list class="menu-height bg-primary">
+				<v-list-item
+					prepend-icon="mdi-home"
+					title="Home"
+					@click="navigateTo('/dashboard')"
+					class="bg-primary"
+				>
+				</v-list-item>
+				<v-list-item
+					prepend-icon="mdi-chart-arc"
+					title="Diagnóstico"
+					@click="navigateTo('/diagnostic')"
+					class="bg-primary"
+				>
+				</v-list-item>
+				<v-list-item
+					prepend-icon="mdi-information-outline"
+					title="Sobre Nós"
+					@click="navigateTo('/about')"
+					class="bg-primary"
+				>
+				</v-list-item>
+			</v-list>
 		</v-navigation-drawer>
 		<main>
 			<section>
 				<slot />
 			</section>
 		</main>
-		<LayoutAppFooter
-			color="primary"
-		/>
+		<LayoutAppFooter color="primary" />
 	</v-app>
 </template>
 
@@ -100,7 +100,6 @@ const drawer = ref(false);
 const isOpen = ref(false);
 
 const location = ref('bottom center');
-
 
 const items = [{ title: 'Sair da conta', icon: 'mdi-logout', action: logout }];
 const itemsMenu = [
@@ -122,13 +121,12 @@ const itemsMenu = [
 	},
 ];
 
-async function logout(){
-	try{
-		await authService.logout()
-		navigateTo("/")
-	}
-	catch(e){
-		console.log(e)
+async function logout() {
+	try {
+		await authService.logout();
+		navigateTo('/');
+	} catch (e) {
+		console.log(e);
 	}
 }
 

@@ -14,14 +14,19 @@
 				layer-type="base"
 				name="OpenStreetMap"
 			/>
-			<LMarker v-for="(location) in props.locations" :key="location.id" :lat-lng="[location.lat, location.lng]">
-				<LTooltip>
-					Clique para mais informações
-				</LTooltip>
+			<LMarker
+				v-for="location in props.locations"
+				:key="location.id"
+				:lat-lng="[location.lat, location.lng]"
+			>
+				<LTooltip> Clique para mais informações </LTooltip>
 				<LPopup>
 					<p>Tipo de material: {{ location.material_info.type }}</p>
 					<p>Quantidade: {{ location.material_info.size }}</p>
-					<p>Endereço: {{ location.cep_info.rua }}, {{ location.cep_info.bairro }}, {{ location.cep_info.numero }}, {{ location.cep_info.cep }} </p>
+					<p>
+						Endereço: {{ location.cep_info.rua }}, {{ location.cep_info.bairro }},
+						{{ location.cep_info.numero }}, {{ location.cep_info.cep }}
+					</p>
 					<p>Contato: {{ location.cep_info.contato }}</p>
 				</LPopup>
 			</LMarker>
@@ -35,26 +40,30 @@ import { ref, type PropType } from 'vue';
 import type { Coordinate, LocationType } from '~/types/location';
 
 const props = defineProps({
-	selectedPoint:{
+	selectedPoint: {
 		type: Object as PropType<Coordinate>,
-		default:()=>({
+		default: () => ({
 			lat: 0,
-			lng: 0 
-		})
+			lng: 0,
+		}),
 	},
-	locations:{
+	locations: {
 		type: Array as PropType<LocationType[]>,
-		default: ()=>([])
-	}
+		default: () => [],
+	},
 });
-watch(props, ({ selectedPoint: $new, locations })=>{
-	if($new){
-		addPoint($new)
-	}
-	console.log(locations)
-},{
-	deep: true
-})
+watch(
+	props,
+	({ selectedPoint: $new, locations }) => {
+		if ($new) {
+			addPoint($new);
+		}
+		console.log(locations);
+	},
+	{
+		deep: true,
+	},
+);
 const map = ref<Map | null>(null);
 
 const onMapReady = async (leafletObject: Map): Promise<void> => {
@@ -73,19 +82,16 @@ const onMapReady = async (leafletObject: Map): Promise<void> => {
 		L.circle(e.latlng, radius).addTo(leafletObject);
 	});
 };
-let removePoint:L.Marker | null = null;
+let removePoint: L.Marker | null = null;
 
-async function addPoint(point:Coordinate){
-	if(removePoint){
-		removePoint.remove()
+async function addPoint(point: Coordinate) {
+	if (removePoint) {
+		removePoint.remove();
 	}
-	if(map.value){
-		removePoint = L.marker(point)
-		.addTo(map.value)
-		.bindPopup("Ponto selecionado")
-		.openPopup()
+	if (map.value) {
+		removePoint = L.marker(point).addTo(map.value).bindPopup('Ponto selecionado').openPopup();
 	}
-  } 
+}
 </script>
 
 <style scoped lang="scss"></style>

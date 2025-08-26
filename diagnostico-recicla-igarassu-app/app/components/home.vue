@@ -21,30 +21,33 @@
 					:style="{ backgroundImage: `url(${item.src})` }"
 					class="svg-image"
 				/>
-				<div :class="['carousel-text', item.position]" :style="{color:item.color}">
+				<div
+					:class="['carousel-text', item.position]"
+					:style="{ color: item.color }"
+				>
 					{{ item.title }}
 				</div>
 				<div
-    				v-if="item.hasButton"
-    				class="overlay-button"
-  				>
-    				<v-btn
-      					color="primary"
+					v-if="item.hasButton"
+					class="overlay-button"
+				>
+					<v-btn
+						color="primary"
 						size="x-large"
-      					class="button mt-4"
-     					 @click="dialogState = true"
-						 append-icon="mdi-arrow-right"
-   					 >
-      					Começar a colaborar
-    				</v-btn>
-  				</div>
+						class="button mt-4"
+						@click="dialogState = true"
+						append-icon="mdi-arrow-right"
+					>
+						Começar a colaborar
+					</v-btn>
+				</div>
 			</div>
 		</v-carousel-item>
 	</v-carousel>
 </template>
 
 <script setup>
-import { dialogState } from '@/composables/useDialog.js'
+import { dialogState } from '@/composables/useDialog.js';
 
 import image3 from '~/assets/images/image3.svg';
 import image1 from '~/assets/images/image1.svg';
@@ -57,7 +60,7 @@ const items = [
 		title: 'Você sabia que...',
 		position: 'center',
 		hasButton: false,
-		color:'#fcfafa'
+		color: '#fcfafa',
 	},
 	{
 		type: 'svg',
@@ -65,7 +68,7 @@ const items = [
 		title: 'O descarte incorreto de resíduos contribui para enchentes e doenças em nosso bairro.',
 		position: 'bottom-left',
 		hasButton: false,
-		color: '#fcfafa'
+		color: '#fcfafa',
 	},
 	{
 		type: 'svg',
@@ -73,15 +76,15 @@ const items = [
 		title: "Mas o que muitos veem como 'lixo' é, na verdade, trabalho e renda para muitas famílias.",
 		position: 'bottom-left',
 		hasButton: false,
-		color: '#fcfafa'
+		color: '#fcfafa',
 	},
 	{
 		type: 'svg',
 		src: image4,
-		title: "Cada registro seu no mapa é um voto por uma igarassu mais limpa. Ajude-nos a mostrar onde a coleta seletiva é mais necessária",
+		title: 'Cada registro seu no mapa é um voto por uma igarassu mais limpa. Ajude-nos a mostrar onde a coleta seletiva é mais necessária',
 		position: 'bottom-left',
 		hasButton: true,
-		color: '#0a0a0a'
+		color: '#0a0a0a',
 	},
 ];
 </script>
@@ -135,9 +138,9 @@ const items = [
 }
 .overlay-button {
 	position: absolute;
-  bottom: 3rem; /* posição do botão na tela */
-  left: 5rem;   /* ajusta como quiser */
-  z-index: 20;  /* garante que fica acima da imagem */
+	bottom: 3rem; /* posição do botão na tela */
+	left: 5rem; /* ajusta como quiser */
+	z-index: 20; /* garante que fica acima da imagem */
 }
 .button {
 	z-index: 20;

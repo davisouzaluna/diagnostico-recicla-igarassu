@@ -9,7 +9,7 @@
 				Registrar disponibilidade
 			</v-btn>
 		</v-container>
-			<Map :locations="locations" />
+		<Map :locations="locations" />
 	</section>
 </template>
 
@@ -19,19 +19,14 @@ import type { LocationType } from '~/types/location';
 
 const locations = ref<LocationType[]>([]);
 
-async function getLocations(){
-	try{
+async function getLocations() {
+	try {
 		const data = await locationsService.getLocations();
-		locations.value.push(...data)
-	}
-	catch(e){
-		alert(e.msg)
+		locations.value.push(...data);
+	} catch (e) {
+		alert(e.msg);
 	}
 }
-onMounted(()=>
-	getLocations()
-)
-onActivated(()=>
-	getLocations()
-)
+onMounted(() => getLocations());
+onActivated(() => getLocations());
 </script>

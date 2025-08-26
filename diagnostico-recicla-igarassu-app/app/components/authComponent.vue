@@ -200,7 +200,7 @@
 
 <script lang="ts" setup>
 import authService from '~/services/authService';
-import { dialogState } from '@/composables/useDialog.js'
+import { dialogState } from '@/composables/useDialog.js';
 
 const login = ref(false);
 const register = ref(false);
@@ -214,19 +214,22 @@ const login_data = ref({
 });
 
 const register_data = ref({
-	email: "",
-	name: "",
-	password: "",
-	confirmPassword: ""
-})
+	email: '',
+	name: '',
+	password: '',
+	confirmPassword: '',
+});
 
-async function submitRegister(){
-	try{
-		await authService.register(register_data.value.name, register_data.value.email, register_data.value.password)
-		navigateTo('/dashboard')
-	}
-	catch(e){
-		console.log(e)
+async function submitRegister() {
+	try {
+		await authService.register(
+			register_data.value.name,
+			register_data.value.email,
+			register_data.value.password,
+		);
+		navigateTo('/dashboard');
+	} catch (e) {
+		console.log(e);
 	}
 }
 

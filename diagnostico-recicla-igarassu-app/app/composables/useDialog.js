@@ -1,3 +1,3 @@
-import { ref } from 'vue'
+import { ref } from 'vue';
 
-export const dialogState = ref(false)
+export const dialogState = ref(false);
