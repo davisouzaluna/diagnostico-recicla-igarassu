@@ -201,6 +201,7 @@
 <script lang="ts" setup>
 import authService from '~/services/authService';
 import { dialogState } from '@/composables/useDialog.js';
+import Swal from 'sweetalert2';
 
 const login = ref(false);
 const register = ref(false);
@@ -221,23 +222,36 @@ const register_data = ref({
 });
 
 async function submitRegister() {
+	Swal.fire({
+		title: 'Realizando cadastro...',
+	});
+	Swal.showLoading();
 	try {
 		await authService.register(
 			register_data.value.name,
 			register_data.value.email,
 			register_data.value.password,
 		);
+		Swal.close();
+		dialogState.value = false;
 		navigateTo('/dashboard');
 	} catch (e) {
+		Swal.close();
 		console.log(e);
 	}
 }
 
 async function submitLogin() {
+	Swal.fire({
+		title: 'Realizando login...',
+	});
+	Swal.showLoading();
 	try {
 		await authService.login(login_data.value.email, login_data.value.password);
+		Swal.close();
 		navigateTo('/dashboard');
 	} catch (e) {
+		Swal.close();
 		alert(e!.msg);
 		console.log(e);
 	}
