@@ -61,13 +61,13 @@
 							placeholder=""
 						/>
 					</v-col>
-					<v-col cols="1">
+					<v-col cols="2">
 						<v-label for="numero">Número:</v-label>
 						<v-text-field
 							id="numero"
 							v-model="cepInfo.numero"
 							variant="outlined"
-							placeholder="Digite o número da casa"
+							placeholder=""
 						/>
 					</v-col>
 					<v-col>
@@ -117,6 +117,7 @@
 					id="reference_point"
 					v-model="cepInfo.referencia"
 					variant="outlined"
+					placeholder="Ponto de referência do endereço ou observações"
 				/>
 				<v-container class="d-flex flex-row justify-end ga-2">
 					<v-btn
